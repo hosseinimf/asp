@@ -1,0 +1,32 @@
+﻿@model IEnumerable<student_management_asp_uppgift1.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Studnets</h1>
+<br />
+<p>
+    <a asp-action="Create" type="button" class="btn btn-primary">Create New Student</a>
+</p>
+<br />
+
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card m-2 rounded" style="width: 18rem;">
+            <img src="..." class="card-img-top text-center rounded-circle" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">@item.FirstName @item.LastName</h5>
+                <p class="card-text text-center">@item.UserName</p>
+                <div class="text-center">
+                    <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-warning">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

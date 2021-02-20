@@ -1,0 +1,53 @@
+﻿@model IEnumerable<student_management_asp_uppgift1.Models.StudentCourse>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Students in the Course</h4>
+    <hr />
+
+
+    <div class="row">
+
+
+        <div class="card bg-info m-2 " style="width: 18rem;">
+            <img src="..." class="card-img-top text-center rounded-circle" alt="...">
+
+            <div class="list-group list-group-flush bg-info">
+                <h5 class="list-group-item text-center bg-info">@ViewBag.TeacherOf.DisplayName</h5>
+                <p class="list-group-item text-center bg-info">Teacher</p>
+                <p class="list-group-item text-center bg-info">Email:  @ViewBag.TeacherOf</p>
+            </div>
+
+            @*<div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+            </div>*@
+        </div>
+
+
+        @foreach (var student in Model)
+        {
+
+    <div class="card m-2" style="width: 16rem;">
+        <img src="..." class="card-img-top text-center rounded-circle" alt="...">
+
+        <div class="list-group list-group-flush">
+            <h5 class="list-group-item text-center">@Html.DisplayFor(modelstudent => student.Student.DisplayName)</h5>
+            <p class="list-group-item text-center">Student</p>
+            <p class="list-group-item text-center">@Html.DisplayFor(modelStudent => student.Course.CourseName)</p>
+        </div>
+    </div>
+
+        }
+    </div>
+</div>
+<br />
+<br />
+
+<div>
+    <a asp-controller="Courses" asp-action="index" type="button" class="btn btn-secondary">Back</a>
+</div>

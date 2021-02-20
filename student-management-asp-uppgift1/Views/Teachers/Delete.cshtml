@@ -1,0 +1,23 @@
+﻿@model student_management_asp_uppgift1.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Teacher</h4>
+    <h5>@ViewBag.CurrentTeacher</h5>
+    <hr />
+    <dl class="row">
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" type="button" class="btn btn-secondary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+
+    </form>
+</div>
