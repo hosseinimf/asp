@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using student_management_asp_uppgift1.Data;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace student_management_asp_uppgift1.Controllers
 {
+    [Authorize]
     public class TeachersController : Controller
     {
         
